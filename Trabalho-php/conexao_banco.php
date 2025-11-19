@@ -4,13 +4,11 @@ $username = "root";
 $password = "";
 $database = "Formulario";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $name);
+// Criar conexão
+$conn = new mysqli($servername, $username, $password, $database);
 
-// Check connection
-if (!$conn) {
-  die("Falha na conexão: " . mysqli_connect_error());
+// Verificar conexão
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
 }
-    echo "Conectado com sucesso";
-    mysqli_close($conn); // Fechar a conexão
 ?>
